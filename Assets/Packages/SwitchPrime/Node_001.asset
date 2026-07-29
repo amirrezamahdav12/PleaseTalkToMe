@@ -18,6 +18,18 @@ MonoBehaviour:
 
     Maybe I should stop streaming.'
   portrait: {fileID: 0}
+  idEndingNode: 0
+  endingMessage: 
+  chatMessages:
+  - username: Ali
+    message: Keep going Omid!
+    viewerType: 0
+  - username: Sara
+    message: We believe in you.
+    viewerType: 0
+  - username: Bot_23
+    message: Follow for follow!
+    viewerType: 0
   choices:
   - text: im watching, keep it up
     nextNodeID: intro_002

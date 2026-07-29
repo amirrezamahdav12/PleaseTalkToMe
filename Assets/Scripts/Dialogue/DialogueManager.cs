@@ -10,18 +10,25 @@ public class DialogueManager : MonoBehaviour
 
     public PlayerStats playerStats;
 
+    [SerializeField]
+    private EndGameUI endGameUI;
+
+    [SerializeField]
+    private ChatManager chatManager;
+
 
     void Start()
     {
+        chatManager.ClearChat();
+
         StartDialogue("intro_001");
     }
-
 
     public void StartDialogue(string nodeID)
     {
         currentNode = GetNode(nodeID);
 
-        if(currentNode == null)
+        if (currentNode == null)
         {
             Debug.LogError("Node not found: " + nodeID);
             return;
@@ -50,9 +57,9 @@ public class DialogueManager : MonoBehaviour
 
     DialogueNode GetNode(string id)
     {
-        foreach(DialogueNode node in database.nodes)
+        foreach (DialogueNode node in database.nodes)
         {
-            if(node.nodeID == id)
+            if (node.nodeID == id)
                 return node;
         }
 
@@ -66,5 +73,7 @@ public class DialogueManager : MonoBehaviour
             currentNode,
             this
         );
+
+        chatManager.DisplayChat(currentNode);
     }
 }

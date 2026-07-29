@@ -15,6 +15,16 @@ public class DialogueNode : ScriptableObject
 
     public Sprite portrait;
 
+    [Header("Node settings")]
+    public bool idEndingNode;
+
+    [TextArea]
+    public string endingMessage;
+
+    [Header("Chat")]
+
+    public List<ChatMessageData> chatMessages = new();
+
     [Space]
 
     public List<ChoiceData> choices = new();
