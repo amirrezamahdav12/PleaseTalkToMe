@@ -8,6 +8,8 @@ public class DialogueNode : ScriptableObject
 
     public string nodeID;
 
+    public string notificationText;
+
     public string speaker;
 
     [TextArea(3, 10)]

@@ -16,8 +16,16 @@ MonoBehaviour:
   speaker: 
   dialogue: 'I don''t know...
 
-    It feels like nobody cares anymore.'
+    Streaming feels pointless lately.'
   portrait: {fileID: 0}
+  idEndingNode: 0
+  endingMessage: 
+  chatMessages:
+  - username: Sara
+    message: Maybe talking helps.
+    viewerType: 0
+    delay: 2
+    newViewer: 0
   choices: []
   emotion: 0
   eventID: 

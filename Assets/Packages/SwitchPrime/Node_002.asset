@@ -16,8 +16,16 @@ MonoBehaviour:
   speaker: Omid
   dialogue: 'Thanks...
 
-    I guess I should try a little longer.'
+    I thought nobody cared anymore.'
   portrait: {fileID: 0}
+  idEndingNode: 0
+  endingMessage: 
+  chatMessages:
+  - username: Ali
+    message: That's why we stay.
+    viewerType: 0
+    delay: 2
+    newViewer: 1
   choices: []
   emotion: 0
   eventID: 

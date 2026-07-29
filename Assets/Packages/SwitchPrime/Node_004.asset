@@ -16,8 +16,16 @@ MonoBehaviour:
   speaker: Omid
   dialogue: 'Haha...
 
-    At least I can laugh at myself.'
+    Maybe that wasn''t the best joke.'
   portrait: {fileID: 0}
+  idEndingNode: 0
+  endingMessage: 
+  chatMessages:
+  - username: Hater123
+    message: Not funny.
+    viewerType: 0
+    delay: 2
+    newViewer: 0
   choices: []
   emotion: 0
   eventID: 

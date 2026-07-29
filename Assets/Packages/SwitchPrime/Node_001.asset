@@ -14,48 +14,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   nodeID: intro_001
   speaker: Omid
-  dialogue: 'Nobody is watching today...
+  dialogue: 'Nobody stayed today...
 
-    Maybe I should stop streaming.'
+    Maybe I''m not good enough.'
   portrait: {fileID: 0}
   idEndingNode: 0
   endingMessage: 
   chatMessages:
-  - username: Ali
-    message: Keep going Omid!
-    viewerType: 0
-    delay: 1
-    newViewer: 1
   - username: Sara
-    message: We believe in you.
+    message: Keep streaming.
     viewerType: 0
     delay: 3
-    newViewer: 0
-  - username: Bot_23
-    message: Follow for follow!
-    viewerType: 0
-    delay: 6
-    newViewer: 0
+    newViewer: 1
   choices:
-  - text: im watching, keep it up
+  - text: Encourage him
     nextNodeID: intro_002
-    hopeChange: 10
-    stressChange: -5
-    trustChange: 5
-  - text: Ask why nobody came.
+    hopeChange: 5
+    stressChange: -3
+    trustChange: 2
+    timeEffect: 20
+    responseChat:
+    - username: Ali
+      message: That's the spirit!
+      viewerType: 0
+      delay: 2
+      newViewer: 0
+  - text: Ask what happened
     nextNodeID: intro_003
-    hopeChange: 0
-    stressChange: 5
-    trustChange: 10
+    hopeChange: 2
+    stressChange: 0
+    trustChange: 5
+    timeEffect: 0
+    responseChat:
+    - username: sara
+      message: Maybe talking helps.
+      viewerType: 0
+      delay: 2
+      newViewer: 0
   - text: Make a joke.
     nextNodeID: intro_004
-    hopeChange: 5
-    stressChange: -10
-    trustChange: 0
-  - text: Say nothing.
+    hopeChange: -2
+    stressChange: 5
+    trustChange: -1
+    timeEffect: -20
+    responseChat:
+    - username: Hater123
+      message: That was awkward...
+      viewerType: 0
+      delay: 2
+      newViewer: 0
+  - text: Stay Silent
     nextNodeID: intro_005
-    hopeChange: -5
-    stressChange: 10
-    trustChange: -5
+    hopeChange: -1
+    stressChange: 3
+    trustChange: 0
+    timeEffect: -10
+    responseChat:
+    - username: Bot_23
+      message: Anyone watching?
+      viewerType: 0
+      delay: 3
+      newViewer: 0
   emotion: 0
   eventID: 

@@ -23,11 +23,18 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float choiceChatDelay = 3f;
 
+    [SerializeField]
+    private NotificationManager notificationManager;
+
     void Start()
     {
         chatManager.ClearChat();
 
         StartDialogue("intro_001");
+
+        notificationManager.ShowNotification(
+    "Unknown98 followed you"
+);
     }
 
     public void StartDialogue(string nodeID)
@@ -85,6 +92,13 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(
             ShowNodeChatDelayed()
         );
+
+        if (!string.IsNullOrEmpty(currentNode.notificationText))
+        {
+            notificationManager.ShowNotification(
+                currentNode.notificationText
+            );
+        }
     }
 
     public void PlayNodeChat()

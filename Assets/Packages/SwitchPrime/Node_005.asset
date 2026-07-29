@@ -16,6 +16,14 @@ MonoBehaviour:
   speaker: Omid
   dialogue: ...
   portrait: {fileID: 0}
+  idEndingNode: 1
+  endingMessage: omid commited socide
+  chatMessages:
+  - username: Unknown98
+    message: Is he still there?
+    viewerType: 0
+    delay: 3
+    newViewer: 0
   choices: []
   emotion: 0
   eventID: 
