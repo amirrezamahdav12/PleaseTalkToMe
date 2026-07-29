@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
   m_Name: Node_005
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: 
-  speaker: 
-  dialogue: 
+  nodeID: intro_005
+  speaker: Omid
+  dialogue: ...
   portrait: {fileID: 0}
   choices: []
   emotion: 0

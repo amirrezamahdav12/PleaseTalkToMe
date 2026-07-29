@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
   m_Name: Node_004
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: 
-  speaker: 
-  dialogue: 
+  nodeID: intro_004
+  speaker: Omid
+  dialogue: 'Haha...
+
+    At least I can laugh at myself.'
   portrait: {fileID: 0}
   choices: []
   emotion: 0

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Node_002
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   nodeID: intro_002
-  speaker: 
-  dialogue: Maybe you're right...
+  speaker: Omid
+  dialogue: 'Thanks...
+
+    I guess I should try a little longer.'
   portrait: {fileID: 0}
   choices: []
+  emotion: 0
+  eventID: 

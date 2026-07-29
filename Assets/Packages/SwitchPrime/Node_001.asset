@@ -14,16 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   nodeID: intro_001
   speaker: Omid
-  dialogue: Nobody stayed today...
+  dialogue: 'Nobody is watching today...
+
+    Maybe I should stop streaming.'
   portrait: {fileID: 0}
   choices:
-  - text: Keep going.
+  - text: im watching, keep it up
     nextNodeID: intro_002
     hopeChange: 10
     stressChange: -5
     trustChange: 5
-  - text: Ask what happened.
+  - text: Ask why nobody came.
     nextNodeID: intro_003
     hopeChange: 0
-    stressChange: 2
+    stressChange: 5
     trustChange: 10
+  - text: Make a joke.
+    nextNodeID: intro_004
+    hopeChange: 5
+    stressChange: -10
+    trustChange: 0
+  - text: Say nothing.
+    nextNodeID: intro_005
+    hopeChange: -5
+    stressChange: 10
+    trustChange: -5
+  emotion: 0
+  eventID: 

@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   nodeID: intro_003
   speaker: 
-  dialogue: I don't even know anymore...
+  dialogue: 'I don''t know...
+
+    It feels like nobody cares anymore.'
   portrait: {fileID: 0}
   choices: []
+  emotion: 0
+  eventID: 
