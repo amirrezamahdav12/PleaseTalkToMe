@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private ChatManager chatManager;
 
+    [SerializeField]
+    private GameTimer gameTimer;
+
+    [SerializeField]
+    private float choiceChatDelay = 3f;
 
     void Start()
     {
@@ -51,9 +57,13 @@ public class DialogueManager : MonoBehaviour
         );
 
 
+        gameTimer.AddTime(
+            choice.timeEffect
+        );
+
+
         StartDialogue(choice.nextNodeID);
     }
-
 
     DialogueNode GetNode(string id)
     {
@@ -69,10 +79,48 @@ public class DialogueManager : MonoBehaviour
 
     void ShowCurrentNode()
     {
-        dialogueUI.DisplayNode(
-            currentNode,
-            this
+        dialogueUI.DisplayNode(currentNode, this);
+
+
+        StartCoroutine(
+            ShowNodeChatDelayed()
         );
+    }
+
+    public void PlayNodeChat()
+    {
+        chatManager.DisplayChat(currentNode);
+    }
+
+    private IEnumerator ExecuteChoice(ChoiceData choice)
+    {
+        playerStats.ChangeStats(
+            choice.hopeChange,
+            choice.stressChange,
+            choice.trustChange
+        );
+
+
+        gameTimer.AddTime(
+            choice.timeEffect
+        );
+
+
+        yield return StartCoroutine(
+            chatManager.DisplayChoiceChat(
+                choice.responseChat
+            )
+        );
+
+
+        StartDialogue(
+            choice.nextNodeID
+        );
+    }
+
+    private IEnumerator ShowNodeChatDelayed()
+    {
+        yield return new WaitForSeconds(2f);
 
         chatManager.DisplayChat(currentNode);
     }

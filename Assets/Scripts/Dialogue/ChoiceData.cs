@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 
 [Serializable]
 public class ChoiceData
@@ -7,9 +10,24 @@ public class ChoiceData
 
     public string nextNodeID;
 
-    public int hopeChange;
 
-    public int stressChange;
+    [Header("Stats Effect")]
 
-    public int trustChange;
+    public float hopeChange;
+
+    public float stressChange;
+
+    public float trustChange;
+
+
+
+    [Header("Time Effect")]
+
+    public float timeEffect;
+
+
+
+    [Header("Chat Reaction")]
+
+    public List<ChatMessageData> responseChat;
 }

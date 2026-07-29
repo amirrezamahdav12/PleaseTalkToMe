@@ -8,8 +8,5 @@ public class ChoiceButton : MonoBehaviour
     public int stress;
     public int trust;
 
-    public void SelectChoice()
-    {
-        
-    }
+
 }
