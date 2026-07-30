@@ -18,8 +18,8 @@ MonoBehaviour:
   dialogue: 'Oh...
 
     Someone actually joined.'
-  portrait: {fileID: 21300000, guid: 4bceb80af9756a549ae3e1ba3535eaa0, type: 3}
-  idEndingNode: 0
+  mood: 1
+  isEndingNode: 0
   endingMessage: 
   chatMessages:
   - username: Ali
@@ -37,5 +37,4 @@ MonoBehaviour:
     trustChange: 2
     timeEffect: 0
     responseChat: []
-  emotion: 0
   eventID: 

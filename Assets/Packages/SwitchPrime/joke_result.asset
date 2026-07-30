@@ -18,8 +18,8 @@ MonoBehaviour:
   dialogue: 'Haha...
 
     Never mind.'
-  portrait: {fileID: 21300000, guid: ce90cb0339167884e8c0280564f1e8b1, type: 3}
-  idEndingNode: 0
+  mood: 3
+  isEndingNode: 0
   endingMessage: 
   chatMessages:
   - username: Ali
@@ -37,5 +37,4 @@ MonoBehaviour:
     trustChange: 0
     timeEffect: 0
     responseChat: []
-  emotion: 0
   eventID: 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class DialogueNode : ScriptableObject
 {
     [Header("General")]
-
     public string nodeID;
 
     public string notificationText;
@@ -15,35 +14,20 @@ public class DialogueNode : ScriptableObject
     [TextArea(3, 10)]
     public string dialogue;
 
-    public Sprite portrait;
+    public OmidMood mood = OmidMood.Natural;
 
-    [Header("Node settings")]
-    public bool idEndingNode;
+    [Header("Node Settings")]
+    public bool isEndingNode;
 
     [TextArea]
     public string endingMessage;
 
     [Header("Chat")]
-
     public List<ChatMessageData> chatMessages = new();
 
-    [Space]
-
+    [Header("Choices")]
     public List<ChoiceData> choices = new();
 
-    public enum Emotion
-    {
-        Neutral,
-        Happy,
-        Thinking,
-        Sad,
-        Crying,
-        Angry,
-        Tired,
-        Hopeless
-    }
-
-    public Emotion emotion;
-
+    [Header("Events")]
     public string eventID;
 }

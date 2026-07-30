@@ -18,8 +18,8 @@ MonoBehaviour:
   dialogue: 'Thanks for staying.
 
     Most people leave quickly.'
-  portrait: {fileID: 21300000, guid: 4bceb80af9756a549ae3e1ba3535eaa0, type: 3}
-  idEndingNode: 0
+  mood: 1
+  isEndingNode: 0
   endingMessage: 
   chatMessages:
   - username: Ali
@@ -28,5 +28,4 @@ MonoBehaviour:
     delay: 0
     newViewer: 0
   choices: []
-  emotion: 0
   eventID: 

@@ -8,9 +8,8 @@ public class DialogueUI : MonoBehaviour
     [Header("UI")]
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
-    public Image portraitImage;
 
-    [Header("Choices")]
+    public VideoPortraitController portraitController; [Header("Choices")]
     public ChoiceButtonUI[] choiceButtons;
 
     [Header("Typewriter")]
@@ -74,8 +73,7 @@ public class DialogueUI : MonoBehaviour
         currentManager = manager;
 
         speakerText.text = node.speaker;
-        portraitImage.sprite = node.portrait;
-
+        portraitController.SetMood(node.mood);
         HideChoices();
 
         StartTyping(node.dialogue);
