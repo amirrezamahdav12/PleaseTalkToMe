@@ -10,31 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: joke_result
+  m_Name: practical
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: joke_result
+  nodeID: practical
+  nodePosition: {x: 310, y: 730}
   notificationText: 
   speaker: Omid
-  dialogue: 'Haha...
+  dialogue: 'Therapy? Pills?
 
-    Never mind.'
-  mood: 3
+    Yeah, because that''s worked
+
+    so far.'
+  mood: 4
   isEndingNode: 0
   endingMessage: 
   chatMessages:
-  - username: Ali
-    message: 'That joke felt a little sad...
-
-      Are you okay?'
+  - username: 'Ali '
+    message: one step at a time. thats all
     viewerType: 0
-    delay: 0
+    delay: 1
     newViewer: 0
   choices:
-  - text: Are u ok?
-    nextNodeID: first_conversation
-    hopeChange: 0
-    stressChange: 0
-    trustChange: 0
-    timeEffect: 0
+  - text: im glad you still here
+    nextNodeID: good_ending
+    hopeChange: 15
+    stressChange: -10
+    trustChange: 15
+    timeEffect: 30
+    responseChat: []
+  - text: lets stay on this call
+    nextNodeID: comfort
+    hopeChange: 5
+    stressChange: -5
+    trustChange: 5
+    timeEffect: 20
     responseChat: []
   eventID: 

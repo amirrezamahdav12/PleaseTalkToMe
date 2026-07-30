@@ -21,7 +21,6 @@ public class VideoPortraitController : MonoBehaviour
     public void SetMood(OmidMood mood)
     {
         Debug.Log($"SetMood => {mood}");
-        
 
         if (mood == currentMood)
             return;
@@ -39,5 +38,18 @@ public class VideoPortraitController : MonoBehaviour
         currentMood = mood;
 
         transitionManager.Play(clip);
+    }
+
+    public void PreWarmMood(OmidMood mood)
+    {
+        if (mood == currentMood)
+            return;
+
+        VideoClip clip = moodLibrary.GetClip(mood);
+
+        if (clip == null)
+            return;
+
+        transitionManager.PreWarm(clip);
     }
 }

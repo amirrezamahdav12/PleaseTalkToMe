@@ -167,7 +167,7 @@ public class DialogueUI : MonoBehaviour
         ShowChoices();
     }
 
-    private void HideChoices()
+    public void HideChoices()
     {
         foreach (ChoiceButtonUI button in choiceButtons)
         {
@@ -188,6 +188,15 @@ public class DialogueUI : MonoBehaviour
                     i,
                     currentNode.choices[i].text
                 );
+
+                string nextID = currentNode.choices[i].nextNodeID;
+
+                DialogueNode nextNode = currentManager.GetNode(nextID);
+
+                if (nextNode != null)
+                {
+                    portraitController.PreWarmMood(nextNode.mood);
+                }
             }
             else
             {

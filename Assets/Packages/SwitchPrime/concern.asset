@@ -10,22 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: first_conversation
+  m_Name: concern
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: first_conversation
+  nodeID: concern
+  nodePosition: {x: 160, y: 280}
   notificationText: 
   speaker: Omid
-  dialogue: 'Thanks for staying.
+  dialogue: 'Don''t give me that ''I care'' bullshit.
 
-    Most people leave quickly.'
-  mood: 1
+    You don''t know me.'
+  mood: 3
   isEndingNode: 0
   endingMessage: 
   chatMessages:
   - username: Ali
-    message: Why do you stream alone?
+    message: i don't care if you know . im still here
     viewerType: 0
-    delay: 0
+    delay: 0.5
     newViewer: 0
-  choices: []
+  choices:
+  - text: i want to know you.
+    nextNodeID: trust_build
+    hopeChange: 5
+    stressChange: 5
+    trustChange: 15
+    timeEffect: 20
+    responseChat: []
+  - text: someone has to care
+    nextNodeID: venting
+    hopeChange: 10
+    stressChange: -5
+    trustChange: 15
+    timeEffect: 10
+    responseChat: []
   eventID: 

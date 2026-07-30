@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
+  m_Name: good_ending
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  nodeID: good_ending
+  nodePosition: {x: 370, y: 910}
+  notificationText: 
+  speaker: Omid
+  dialogue: 'Maybe... maybe tonight''s
+
+    not the night.
+
+    Thanks for being
+
+    a
+    stubborn bastard.'
+  mood: 1
+  isEndingNode: 1
+  endingMessage: 
+  chatMessages:
+  - username: Ali
+    message: That's all i wanted to hear.
+    viewerType: 0
+    delay: 0
+    newViewer: 0
+  - username: i'll be here. same time tomorrow
+    message: 
+    viewerType: 0
+    delay: 2.5
+    newViewer: 0
+  choices: []
+  eventID: 

@@ -8,13 +8,20 @@ public class VideoTransitionManager : MonoBehaviour
     [SerializeField] private PortraitDisplay displayA;
     [SerializeField] private PortraitDisplay displayB;
 
-    [Header("Transition")]
-    [SerializeField] private float fadeDuration = 0.25f;
+    [Header("Fade")]
+    [SerializeField] private float fadeDuration = 0.35f;
+    [SerializeField] private AnimationCurve fadeCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
+    [Header("Scale Pulse")]
+    [SerializeField] private bool enableScalePulse = true;
+    [SerializeField] private float scalePulseAmount = 0.04f;
+    [SerializeField] private AnimationCurve scaleCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
     private PortraitDisplay activeDisplay;
     private PortraitDisplay inactiveDisplay;
 
     private bool isTransitioning;
+    private VideoClip preWarmedClip;
 
     private void Awake()
     {
@@ -47,47 +54,73 @@ public class VideoTransitionManager : MonoBehaviour
         StartCoroutine(TransitionRoutine(clip));
     }
 
+    public void PreWarm(VideoClip clip)
+    {
+        if (clip == null)
+            return;
+
+        if (preWarmedClip == clip)
+            return;
+
+        StartCoroutine(PreWarmRoutine(clip));
+    }
+
     private IEnumerator InitializeRoutine(VideoClip clip)
     {
-        activeDisplay.player.Stop();
-
-        activeDisplay.player.clip = clip;
-
-        activeDisplay.player.Prepare();
-
-        while (!activeDisplay.player.isPrepared)
-            yield return null;
+        yield return PrepareClip(activeDisplay, clip);
+        activeDisplay.player.Play();
 
         activeDisplay.image.texture = activeDisplay.player.targetTexture;
-
-        activeDisplay.player.Play();
 
         yield return new WaitUntil(() => activeDisplay.player.texture != null);
         yield return new WaitForEndOfFrame();
 
         activeDisplay.image.color = Color.white;
+        activeDisplay.image.transform.localScale = Vector3.one;
         inactiveDisplay.image.color = new Color(1f, 1f, 1f, 0f);
+        inactiveDisplay.image.transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator PreWarmRoutine(VideoClip clip)
+    {
+        yield return PrepareClip(inactiveDisplay, clip);
+
+        inactiveDisplay.image.texture = inactiveDisplay.player.targetTexture;
+
+        yield return new WaitUntil(() => inactiveDisplay.player.texture != null);
+        yield return new WaitForEndOfFrame();
+
+        preWarmedClip = clip;
     }
 
     private IEnumerator TransitionRoutine(VideoClip clip)
     {
         isTransitioning = true;
 
-        inactiveDisplay.player.Stop();
+        if (preWarmedClip == clip)
+        {
+            inactiveDisplay.player.Play();
+            preWarmedClip = null;
+        }
+        else
+        {
+            yield return PrepareClip(inactiveDisplay, clip);
+            inactiveDisplay.player.Play();
 
-        inactiveDisplay.player.clip = clip;
+            inactiveDisplay.image.texture = inactiveDisplay.player.targetTexture;
 
-        inactiveDisplay.player.Prepare();
+            yield return new WaitUntil(() => inactiveDisplay.player.texture != null);
+            yield return new WaitForEndOfFrame();
+        }
 
-        while (!inactiveDisplay.player.isPrepared)
-            yield return null;
+        if (activeDisplay.image.texture == null)
+        {
+            SwapDisplays();
+            isTransitioning = false;
+            yield break;
+        }
 
-        inactiveDisplay.image.texture = inactiveDisplay.player.targetTexture;
-
-        inactiveDisplay.player.Play();
-
-        yield return new WaitUntil(() => inactiveDisplay.player.texture != null);
-        yield return new WaitForEndOfFrame();
+        Vector3 originalScale = activeDisplay.image.transform.localScale;
 
         float timer = 0f;
 
@@ -95,29 +128,54 @@ public class VideoTransitionManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            float alpha = Mathf.Clamp01(timer / fadeDuration);
+            float t = Mathf.Clamp01(timer / fadeDuration);
+            float easedT = fadeCurve.Evaluate(t);
 
             Color activeColor = activeDisplay.image.color;
-            activeColor.a = 1f - alpha;
+            activeColor.a = 1f - easedT;
             activeDisplay.image.color = activeColor;
 
             Color inactiveColor = inactiveDisplay.image.color;
-            inactiveColor.a = alpha;
+            inactiveColor.a = easedT;
             inactiveDisplay.image.color = inactiveColor;
+
+            if (enableScalePulse)
+            {
+                float scaleT = scaleCurve.Evaluate(t);
+                float pulse = 1f + scalePulseAmount * Mathf.Sin(scaleT * Mathf.PI);
+                inactiveDisplay.image.transform.localScale = originalScale * pulse;
+            }
 
             yield return null;
         }
 
         activeDisplay.player.Stop();
 
+        SwapDisplays();
+
+        activeDisplay.image.color = Color.white;
+        activeDisplay.image.transform.localScale = Vector3.one;
+        inactiveDisplay.image.color = new Color(1f, 1f, 1f, 0f);
+        inactiveDisplay.image.transform.localScale = Vector3.one;
+
+        isTransitioning = false;
+    }
+
+    private void SwapDisplays()
+    {
         PortraitDisplay temp = activeDisplay;
         activeDisplay = inactiveDisplay;
         inactiveDisplay = temp;
+    }
 
-        activeDisplay.image.color = Color.white;
-        inactiveDisplay.image.color = new Color(1f, 1f, 1f, 0f);
+    private static IEnumerator PrepareClip(PortraitDisplay display, VideoClip clip)
+    {
+        display.player.Stop();
+        display.player.clip = clip;
+        display.player.Prepare();
 
-        isTransitioning = false;
+        while (!display.player.isPrepared)
+            yield return null;
     }
 
     public bool IsTransitioning => isTransitioning;

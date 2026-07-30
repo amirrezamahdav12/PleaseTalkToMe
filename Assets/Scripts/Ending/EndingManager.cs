@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EndingManager : MonoBehaviour
@@ -5,6 +6,8 @@ public class EndingManager : MonoBehaviour
     public PlayerStats playerStats;
 
     public EndGameUI endingUI;
+
+    public event Action<string, string> OnEndingDetermined;
 
 
     public void CheckEnding()
@@ -14,34 +17,27 @@ public class EndingManager : MonoBehaviour
         float trust = playerStats.trust;
 
 
+        string title, description;
+
         if (hope >= 70 && trust >= 60)
         {
-            ShowEnding(
-                "Someone Stayed",
-                "Sometimes one person staying is enough."
-            );
+            title = "Someone Stayed";
+            description = "Sometimes one person staying is enough.";
         }
-
         else if (hope <= 20 || stress >= 80)
         {
-            ShowEnding(
-                "Nobody Answered",
-                "Some signals disappear quietly."
-            );
+            title = "Nobody Answered";
+            description = "Some signals disappear quietly.";
         }
-
         else
         {
-            ShowEnding(
-                "The Stream Continues",
-                "Not every story ends today."
-            );
+            title = "The Stream Continues";
+            description = "Not every story ends today.";
         }
-    }
 
+        OnEndingDetermined?.Invoke(title, description);
 
-    void ShowEnding(string title, string description)
-    {
-        endingUI.ShowEnding(title, description);
+        if (endingUI != null)
+            endingUI.ShowEnding(title, description);
     }
 }

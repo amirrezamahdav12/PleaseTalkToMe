@@ -21,20 +21,29 @@ public class DialogueManager : MonoBehaviour
     private GameTimer gameTimer;
 
     [SerializeField]
-    private float choiceChatDelay = 3f;
+    private NotificationManager notificationManager;
 
     [SerializeField]
-    private NotificationManager notificationManager;
+    private EndingManager endingManager;
 
     void Start()
     {
         chatManager.ClearChat();
 
-        StartDialogue("intro_001");
+        if (gameTimer != null)
+            gameTimer.OnTimeFinished += HandleTimerEnd;
+    }
 
-        notificationManager.ShowNotification(
-    "Unknown98 followed you"
-);
+    void OnDestroy()
+    {
+        if (gameTimer != null)
+            gameTimer.OnTimeFinished -= HandleTimerEnd;
+    }
+
+    private void HandleTimerEnd()
+    {
+        if (endingManager != null)
+            endingManager.CheckEnding();
     }
 
     public void StartDialogue(string nodeID)
@@ -72,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         StartDialogue(choice.nextNodeID);
     }
 
-    DialogueNode GetNode(string id)
+    public DialogueNode GetNode(string id)
     {
         foreach (DialogueNode node in database.nodes)
         {
@@ -88,17 +97,14 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueUI.DisplayNode(currentNode, this);
 
-
-        StartCoroutine(
-            ShowNodeChatDelayed()
-        );
+        if (!currentNode.isEndingNode)
+            StartCoroutine(ShowNodeChatDelayed());
 
         if (!string.IsNullOrEmpty(currentNode.notificationText))
-        {
-            notificationManager.ShowNotification(
-                currentNode.notificationText
-            );
-        }
+            notificationManager.ShowNotification(currentNode.notificationText);
+
+        if (currentNode.isEndingNode && endingManager != null)
+            endingManager.CheckEnding();
     }
 
     public void PlayNodeChat()

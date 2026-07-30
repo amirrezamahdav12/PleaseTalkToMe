@@ -7,6 +7,8 @@ public class DialogueNode : ScriptableObject
     [Header("General")]
     public string nodeID;
 
+    [HideInInspector] public Vector2 nodePosition = new(100, 100);
+
     public string notificationText;
 
     public string speaker;

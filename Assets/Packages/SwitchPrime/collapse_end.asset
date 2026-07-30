@@ -10,31 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: ali_intro
+  m_Name: collapse_end
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: ali_intro
+  nodeID: collapse_end
+  nodePosition: {x: 400, y: 1000}
   notificationText: 
   speaker: Omid
-  dialogue: 'Oh...
+  dialogue: 'See?
 
-    Someone actually joined.'
-  mood: 1
-  isEndingNode: 0
+    Everyone leaves eventually.
+
+    Even the ones who
+
+    pretend
+    to care.'
+  mood: 6
+  isEndingNode: 1
   endingMessage: 
   chatMessages:
   - username: Ali
-    message: 'Yeah.
-
-      Don''t worry, I''m here.'
+    message: Don't do this please
     viewerType: 0
     delay: 0
     newViewer: 0
-  choices:
-  - text: Encurage
-    nextNodeID: 'first_conversation '
-    hopeChange: 5
-    stressChange: -5
-    trustChange: 2
-    timeEffect: 0
-    responseChat: []
+  choices: []
   eventID: 

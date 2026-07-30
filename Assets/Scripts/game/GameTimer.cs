@@ -6,29 +6,14 @@ using System;
 public class GameTimer : MonoBehaviour
 {
     [SerializeField]
-    private float timeRemaining = 300f;
-
+    private float timeRemaining = 60f;
 
     [SerializeField]
     private TMP_Text timerText;
 
-
     private bool isRunning = true;
 
-
-    public event Action OnTimeFinished;
-
-
-    void Start()
-    {
-        Invoke(nameof(TestEvent), 5);
-    }
-
-
-    void TestEvent()
-    {
-        AddTime(30);
-    }
+    public event System.Action OnTimeFinished;
 
     void Update()
     {
@@ -67,6 +52,12 @@ public class GameTimer : MonoBehaviour
 
         if (timeRemaining < 0)
             timeRemaining = 0;
+    }
+
+    public void ResetTime(float seconds)
+    {
+        timeRemaining = seconds;
+        isRunning = true;
     }
 
 

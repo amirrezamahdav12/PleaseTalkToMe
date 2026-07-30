@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
+  m_Name: distraction
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  nodeID: distraction
+  nodePosition: {x: 220, y: 460}
+  notificationText: 
+  speaker: Omid
+  dialogue: 'Fun?
+
+    You think I remember
+
+    what fun feels like?'
+  mood: 0
+  isEndingNode: 0
+  endingMessage: 
+  chatMessages:
+  - username: Ali
+    message: we don't have to talk about deep stuff.
+    viewerType: 0
+    delay: 0.5
+    newViewer: 0
+  choices:
+  - text: Then let me remind you
+    nextNodeID: comfort
+    hopeChange: 5
+    stressChange: -10
+    trustChange: 5
+    timeEffect: 20
+    responseChat: []
+  eventID: 

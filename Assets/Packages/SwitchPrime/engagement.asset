@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
+  m_Name: engagement
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  nodeID: engagement
+  nodePosition: {x: 130, y: 190}
+  notificationText: 
+  speaker: Omid
+  dialogue: 'Took you long enough.
+
+    What do you want?'
+  mood: 1
+  isEndingNode: 0
+  endingMessage: 
+  chatMessages:
+  - username: Ali
+    message: Rough night
+    viewerType: 0
+    delay: 0
+    newViewer: 0
+  choices:
+  - text: tell me whats wrong.
+    nextNodeID: venting
+    hopeChange: 10
+    stressChange: -10
+    trustChange: 10
+    timeEffect: 20
+    responseChat: []
+  - text: Lets talk about something else
+    nextNodeID: distraction
+    hopeChange: 5
+    stressChange: -5
+    trustChange: 5
+    timeEffect: 15
+    responseChat: []
+  eventID: 

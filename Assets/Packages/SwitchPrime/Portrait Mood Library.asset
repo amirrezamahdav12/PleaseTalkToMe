@@ -15,9 +15,9 @@ MonoBehaviour:
   moods:
   - mood: 0
     clip: {fileID: 32900000, guid: f096143938413fa49869089648e2a071, type: 3}
+  - mood: 1
+    clip: {fileID: 32900000, guid: 0fdcc5fd70c59bd42acf0b4c1d08f6b7, type: 3}
   - mood: 2
     clip: {fileID: 32900000, guid: c48fc7ba72fa00f4fa86adbfce107ae4, type: 3}
   - mood: 3
     clip: {fileID: 32900000, guid: 389fa5a758669774fb02ae80c6bc1fd2, type: 3}
-  - mood: 1
-    clip: {fileID: 32900000, guid: 0fdcc5fd70c59bd42acf0b4c1d08f6b7, type: 3}

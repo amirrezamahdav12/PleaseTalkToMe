@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: DialogueDatabase
   m_EditorClassIdentifier: Assembly-CSharp::DialogueDatabase
   nodes:
-  - {fileID: 11400000, guid: 0205cda5711dbac44b6bb62534e65e9d, type: 2}
-  - {fileID: 11400000, guid: 06478e20e3bea594f9853c84348a046f, type: 2}
-  - {fileID: 11400000, guid: 8edea83ff214ccc4196618b71143843e, type: 2}
-  - {fileID: 11400000, guid: b5cda872b02ef0a48922c1ca2bb78ee7, type: 2}
-  - {fileID: 11400000, guid: 6249a64e97daf6148a222e2ca1f8c103, type: 2}
+  - {fileID: 11400000, guid: 26a5d67278ce400468fc680bb66aa2af, type: 2}
+  - {fileID: 11400000, guid: 96ea7f96c49ab2e48b97279eb25b00e0, type: 2}
+  - {fileID: 11400000, guid: 97cca494f0ff4ff4a9a97fc409cab516, type: 2}
+  - {fileID: 11400000, guid: fb40044f85d8ca047bfe140bd84717ff, type: 2}
+  - {fileID: 11400000, guid: dbe264679cebad04fb5eacdd9a080aff, type: 2}
+  - {fileID: 11400000, guid: 29b050f765adc02409a8ce7eb9c70d6c, type: 2}
+  - {fileID: 11400000, guid: 779d7bf94885cdf4fb54a7061042c13a, type: 2}
+  - {fileID: 11400000, guid: 601357a615b4d6145874753190dfd483, type: 2}
+  - {fileID: 11400000, guid: 68ec5347f9a8e13488c95bd55db15df0, type: 2}
+  - {fileID: 11400000, guid: 455a2a216610b1c4e95f2274b2def2f8, type: 2}
+  - {fileID: 11400000, guid: 44eedc68cfc5c684fa20bc18b554d500, type: 2}
+  - {fileID: 11400000, guid: 0fae0813b75f5cd4d982be333aa1a80e, type: 2}
