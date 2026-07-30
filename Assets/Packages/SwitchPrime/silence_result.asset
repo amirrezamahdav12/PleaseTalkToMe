@@ -10,22 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: Node_003
+  m_Name: silence_result
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: intro_003
-  speaker: 
-  dialogue: 'I don''t know...
-
-    Streaming feels pointless lately.'
-  portrait: {fileID: 0}
+  nodeID: silence_result
+  notificationText: 
+  speaker: Omid
+  dialogue: ...
+  portrait: {fileID: 21300000, guid: ce90cb0339167884e8c0280564f1e8b1, type: 3}
   idEndingNode: 0
   endingMessage: 
   chatMessages:
-  - username: Sara
-    message: Maybe talking helps.
+  - username: Ali
+    message: Are you still there?
     viewerType: 0
-    delay: 2
+    delay: 0
     newViewer: 0
-  choices: []
+  choices:
+  - text: check if hes alive
+    nextNodeID: Ending_Collapse
+    hopeChange: 0
+    stressChange: 0
+    trustChange: 0
+    timeEffect: 0
+    responseChat: []
   emotion: 0
   eventID: 

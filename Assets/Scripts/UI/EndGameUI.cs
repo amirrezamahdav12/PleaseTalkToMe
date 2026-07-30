@@ -3,22 +3,20 @@ using UnityEngine;
 
 public class EndGameUI : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
-    [SerializeField] private TMP_Text summaryText;
+    public GameObject panel;
 
-    public void Show(PlayerStats stats, string message)
+    public TMP_Text titleText;
+    public TMP_Text descriptionText;
+
+
+    public void ShowEnding(
+        string title,
+        string description
+    )
     {
         panel.SetActive(true);
 
-        summaryText.text =
-            message +
-            "\n\nHope : " + stats.hope +
-            "\nStress : " + stats.stress +
-            "\nTrust : " + stats.trust;
-    }
-
-    public void Hide()
-    {
-        panel.SetActive(false);
+        titleText.text = title;
+        descriptionText.text = description;
     }
 }

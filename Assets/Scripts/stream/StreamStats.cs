@@ -10,8 +10,8 @@ public class StreamStats : MonoBehaviour
     private TMP_Text followerText;
 
 
-    private int viewers = 12;
-    private int followers = 245;
+    private int viewers = 1;
+    private int followers = 0;
 
 
     void Start()

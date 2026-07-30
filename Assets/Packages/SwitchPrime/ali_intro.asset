@@ -10,22 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: Node_002
+  m_Name: ali_intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: intro_002
+  nodeID: ali_intro
+  notificationText: 
   speaker: Omid
-  dialogue: 'Thanks...
+  dialogue: 'Oh...
 
-    I thought nobody cared anymore.'
-  portrait: {fileID: 0}
+    Someone actually joined.'
+  portrait: {fileID: 21300000, guid: 4bceb80af9756a549ae3e1ba3535eaa0, type: 3}
   idEndingNode: 0
   endingMessage: 
   chatMessages:
   - username: Ali
-    message: That's why we stay.
+    message: 'Yeah.
+
+      Don''t worry, I''m here.'
     viewerType: 0
-    delay: 2
-    newViewer: 1
-  choices: []
+    delay: 0
+    newViewer: 0
+  choices:
+  - text: Encurage
+    nextNodeID: 'first_conversation '
+    hopeChange: 5
+    stressChange: -5
+    trustChange: 2
+    timeEffect: 0
+    responseChat: []
   emotion: 0
   eventID: 

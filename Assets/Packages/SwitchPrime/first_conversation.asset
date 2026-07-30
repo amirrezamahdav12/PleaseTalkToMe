@@ -10,19 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: Node_005
+  m_Name: first_conversation
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: intro_005
+  nodeID: first_conversation
+  notificationText: 
   speaker: Omid
-  dialogue: ...
-  portrait: {fileID: 0}
-  idEndingNode: 1
-  endingMessage: omid commited socide
+  dialogue: 'Thanks for staying.
+
+    Most people leave quickly.'
+  portrait: {fileID: 21300000, guid: 4bceb80af9756a549ae3e1ba3535eaa0, type: 3}
+  idEndingNode: 0
+  endingMessage: 
   chatMessages:
-  - username: Unknown98
-    message: Is he still there?
+  - username: Ali
+    message: Why do you stream alone?
     viewerType: 0
-    delay: 3
+    delay: 0
     newViewer: 0
   choices: []
   emotion: 0

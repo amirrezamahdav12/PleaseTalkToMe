@@ -10,22 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f36312e7a9474448c0b79533aab138, type: 3}
-  m_Name: Node_004
+  m_Name: joke_result
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeID: intro_004
+  nodeID: joke_result
+  notificationText: 
   speaker: Omid
   dialogue: 'Haha...
 
-    Maybe that wasn''t the best joke.'
-  portrait: {fileID: 0}
+    Never mind.'
+  portrait: {fileID: 21300000, guid: ce90cb0339167884e8c0280564f1e8b1, type: 3}
   idEndingNode: 0
   endingMessage: 
   chatMessages:
-  - username: Hater123
-    message: Not funny.
+  - username: Ali
+    message: 'That joke felt a little sad...
+
+      Are you okay?'
     viewerType: 0
-    delay: 2
+    delay: 0
     newViewer: 0
-  choices: []
+  choices:
+  - text: Are u ok?
+    nextNodeID: first_conversation
+    hopeChange: 0
+    stressChange: 0
+    trustChange: 0
+    timeEffect: 0
+    responseChat: []
   emotion: 0
   eventID: 
