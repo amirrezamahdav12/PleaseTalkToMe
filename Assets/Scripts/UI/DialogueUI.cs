@@ -16,6 +16,22 @@ public class DialogueUI : MonoBehaviour
     [Header("Typewriter")]
     public float typingSpeed = 0.03f;
 
+    [Header("Typing Audio")]
+    public AudioSource typingAudioSource;
+    public AudioClip typingSound;
+
+    [Range(1, 5)]
+    public int playSoundEvery = 2;
+
+    [Range(0f, 1f)]
+    public float typingVolume = 0.2f;
+
+    [Range(0.8f, 1.2f)]
+    public float minPitch = 0.95f;
+
+    [Range(0.8f, 1.2f)]
+    public float maxPitch = 1.05f;
+
     private Coroutine typingCoroutine;
     private bool isTyping;
     private string currentDialogue;
@@ -80,9 +96,7 @@ public class DialogueUI : MonoBehaviour
         isTyping = true;
 
         dialogueText.text = currentDialogue;
-
         dialogueText.ForceMeshUpdate();
-
         dialogueText.maxVisibleCharacters = 0;
 
         int totalCharacters = dialogueText.textInfo.characterCount;
@@ -90,6 +104,16 @@ public class DialogueUI : MonoBehaviour
         for (int i = 0; i <= totalCharacters; i++)
         {
             dialogueText.maxVisibleCharacters = i;
+
+            if (i < currentDialogue.Length)
+            {
+                char c = currentDialogue[i];
+
+                if (ShouldPlayTypingSound(c, i))
+                {
+                    PlayTypingSound();
+                }
+            }
 
             yield return new WaitForSeconds(typingSpeed);
         }
@@ -99,6 +123,34 @@ public class DialogueUI : MonoBehaviour
         isTyping = false;
 
         ShowChoices();
+    }
+
+    private bool ShouldPlayTypingSound(char c, int index)
+    {
+        if (typingAudioSource == null)
+            return false;
+
+        if (typingSound == null)
+            return false;
+
+        if (char.IsWhiteSpace(c))
+            return false;
+
+        if (index % playSoundEvery != 0)
+            return false;
+
+        return true;
+    }
+
+    private void PlayTypingSound()
+    {
+        typingAudioSource.Stop();
+
+        typingAudioSource.clip = typingSound;
+        typingAudioSource.volume = typingVolume;
+        typingAudioSource.pitch = Random.Range(minPitch, maxPitch);
+
+        typingAudioSource.Play();
     }
 
     private void SkipTyping()
