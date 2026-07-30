@@ -3573,8 +3573,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stress
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 10cda7c11c28ae4449ac3431e0fbe2be, type: 2}
+  m_sharedMaterial: {fileID: -6101980142642398636, guid: 10cda7c11c28ae4449ac3431e0fbe2be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4717,8 +4717,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Trust
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 10cda7c11c28ae4449ac3431e0fbe2be, type: 2}
+  m_sharedMaterial: {fileID: -6101980142642398636, guid: 10cda7c11c28ae4449ac3431e0fbe2be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6161,8 +6161,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hope
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 10cda7c11c28ae4449ac3431e0fbe2be, type: 2}
+  m_sharedMaterial: {fileID: -6101980142642398636, guid: 10cda7c11c28ae4449ac3431e0fbe2be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
