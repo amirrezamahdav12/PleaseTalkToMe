@@ -1,4 +1,4 @@
-# 🎮 Unity Dialogue System Template
+# 🎮 please talk to me
 
 A modular, open-source dialogue system template built with **Unity 6**.
 
